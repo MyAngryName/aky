@@ -268,3 +268,5 @@ def linear_diopahntisch_postiv(x,y,z):
     y1 = yk - (x * k)
 
     return (x1, y1)
+
+
