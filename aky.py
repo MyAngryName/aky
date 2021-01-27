@@ -174,7 +174,7 @@ def bsgs(g, h, p):
 """
 Baby Step Giant Step  -  Elliptische Kurven
 g = Basis (x, y)
-h = Logarithmus von (a, b)
+h = Logarithmus von (a, b)    ---   sowohl g als auch h müssen im gegeben Format übergeben werden
 e = EC()  - Elliptische Kurve im EC Format
 ordnung = ordnung...
 """
