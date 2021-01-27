@@ -233,7 +233,7 @@ def elgamal_attack_parameter(r, s1, s2, h1, h2, p):
         k = (inverse_mod(s, p-1) * (h1 - h2)) % (p-1)
     a = ((h1 - k * s1) % (p - 1))
 
-    return "ar = " + a
+    return a
 
 def lineare_diophantische_gleichung(x, y, z):
     if (x > y):
