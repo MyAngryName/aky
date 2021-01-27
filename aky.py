@@ -250,7 +250,7 @@ def lineare_diophantische_gleichung(x, y, z):
 
     return ((x1 / e[0]), (y1 / e[0]), e[0])
 
-def lineare_diophantische_postiv(x,y,z, max_solves = 10):
+def lineare_diophantische_postiv(x,y,z, max_solves = 5000):
     list_loesungen = []
     e = lineare_diophantische_gleichung(x,y,z)
     k = 0
@@ -280,5 +280,14 @@ def lineare_diophantische_postiv(x,y,z, max_solves = 10):
         tmp = list_loesungen[i]
         i+=1
         print(tmp,list_loesungen[i])
-    return list_loesungen
-        
+    return (i+1)/2
+
+def ordnugn_z(p, element):
+    for i in range(1,p):
+        for ii in range(1,p):
+            e = pow(i,ii,31)
+            if(e == 1):
+                break
+        if(ii == 3):
+            break
+    print(ii, i)
