@@ -66,19 +66,22 @@ def fermat_test(p):
 """
 Bestimmte Anzahl an Runden
 No x for 40 Rounds Test
-x < 0 to Test how many rounds are needed
+x < 0 to Test how many rounds are needed to find a number that is against the primality
 x > 0 for costum amount of rounds
 """
-def x_miller(p, x = 0):
+def x_miller(p, x = 0, max_tests = 10000):
     if (x == 0):
         e = miller_rabin(p)
         return e
     elif(x < 0):
         e = True
         i = 1
-        while(e):
+        while(e and i <= max_tests):
             e = miller_rabin(p, max_rounds = i)
             i += 1
+        if not(i <= max_tests):
+            return ("max Tests done, no witness against primality found")
+        else:
             return (i)
     else:
         e = miller_rabin(p, max_rounds = x)
