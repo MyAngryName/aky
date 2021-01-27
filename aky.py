@@ -4,7 +4,7 @@ from si import chinese_remainder as chrSatz
 from si import extended_gcd as euklid
 from si import EC, ECelem
 from si import *
-from ordnung import *
+from ordnung import start_gruppen as ordnung_gruppen
 from math import ceil, sqrt
 
 """
