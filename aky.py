@@ -25,7 +25,6 @@ def phi(n, d = 0):
                     break
                 else:
                     continue
-
         if (primCheck):
             return (n-1)
         elif (ggtCheck):
@@ -41,9 +40,6 @@ def phi(n, d = 0):
                     ph *= (1 - (1/primeFac[i]))
                     checker.append(primeFac[i])
             return ph
-
-
-
     else:
         return (pow(n,(d-1))*(n-1))
 """
@@ -51,7 +47,6 @@ Checks if something is a Prime Number, if not prints out if it is a Carmichael N
 """
 def fermat_test(p):
     primes = list_primes(0,p)
-
     for i in primes:
         if(pow(i,p,p) == i):
             continue
@@ -142,7 +137,6 @@ def miller_rabin_basis(a, n, max_rounds = 40):
     # max_rounds rounds survived
     perc = miller_rounds_for_possibility(max_rounds)
     return (True, perc) 
-
 
 """
 Baby Step Giant Step  - Gruppen
@@ -256,7 +250,7 @@ def lineare_diophantische_gleichung(x, y, z):
 
     return ((x1 / e[0]), (y1 / e[0]), e[0])
 
-def lineare_diophantisch_postiv(x,y,z, max_solves = 10):
+def lineare_diophantische_postiv(x,y,z, max_solves = 10):
     list_loesungen = []
     e = lineare_diophantische_gleichung(x,y,z)
     k = 0
