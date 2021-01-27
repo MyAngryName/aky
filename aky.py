@@ -218,7 +218,7 @@ def elgamal_attack_signatur_pruefung(r,s,h1,h2,p):
     
     iMod = inverse_mod(h1, (p-1))
     if (iMod == None):
-        return False
+        return ("Solve: %d * k + $d * y = %d" % (s , (p-1), (h1-h2)))
     u = h2 * iMod
     s1 = (s * u) % (p-1)
 
@@ -228,12 +228,12 @@ def elgamal_attack_signatur_pruefung(r,s,h1,h2,p):
 def elgamal_attack_parameter(r, s1, s2, h1, h2, p):
     s = s1 - s2
     if (inverse_mod(s, p-1) == None):
-        return False
+
     else:
         k = (inverse_mod(s, p-1) * (h1 - h2)) % (p-1)
     a = ((h1 - k * s1) % (p - 1))
 
-    return a
+    return a * (inverse_mod(r, (p-1)))
 
 def lineare_diophantische_gleichung(x, y, z):
     if (x > y):
@@ -251,7 +251,8 @@ def lineare_diophantische_gleichung(x, y, z):
 
     return ((x1 / e[0]), (y1 / e[0]), e[0])
 
-def linear_diopahntisch_postiv(x,y,z):
+def lineare_diophantisch_postiv(x,y,z):
+    list_loesungen = []
     e = lineare_diophantische_gleichung(x,y,z)
     k = 0
     xk = e[0]
@@ -264,7 +265,13 @@ def linear_diopahntisch_postiv(x,y,z):
     while (x1 <= 0):
         k += 1
         x1 = (xk + (y * k))
-
+    
     y1 = yk - (x * k)
 
-    return (x1, y1)
+    while(x1 >= 0):
+        k += 1
+        list_loesungen.append(x1, y1)
+        x1 = (xk + (y * k))
+        y1 = yk - (x * k)
+    return list_loesungen
+        
