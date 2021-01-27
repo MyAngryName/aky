@@ -20,7 +20,7 @@ def start_gruppen():
     if (lookFor == 1):
         finish = int(input("How many are you looking for?: "))
         for l in range(finish):
-            pruef(gruppe, lookFor)
+            pruef(gruppe, lookFor, 2)
     else:
         another = int(input("Check alle Elemente + Ordnung einer Gruppe (1) | Alle Elementordnungen + deren Anzahl (2) "))
         pruef(gruppe, lookFor, another)
