@@ -142,6 +142,7 @@ def miller_rabin_basis(a, n, max_rounds = 40):
 
 
 """
+Baby Step Giant Step  - Gruppen
 g = Basis
 h = Logarithmus von h
 p = Primzahl Zp
@@ -168,6 +169,7 @@ def bsgs(g, h, p):
     # Solution not found
     return None
 """
+Baby Step Giant Step  -  Elliptische Kurven
 g = Basis (x, y)
 h = Logarithmus von (a, b)
 e = EC()  - Elliptische Kurve im EC Format
